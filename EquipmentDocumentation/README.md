@@ -1,10 +1,10 @@
 This directory contains manuals for donated equipment
 
 ## Inventory
-Avery:
+Avery Dennison:
 
 * RFID Reader (USB wired wedge) x 5
-* Barcode Scanner (USB wired wedge) x5
+* 1D Barcode Scanner (USB wired wedge) x5
 * ADTP2 printer (barcode/RFID) x1
 
 Honeywell:
