@@ -1,6 +1,7 @@
 This directory contains manuals for donated equipment
 
 ## Inventory
+
 Avery Dennison:
 
 * RFID Reader (USB wired wedge) x 5
