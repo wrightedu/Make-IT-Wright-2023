@@ -9,7 +9,7 @@ Avery Dennison:
 
 Honeywell:
 
-* Barcode Scanner (USB wireless wedge) x6
+* 2D Barcode Scanner (USB wireless wedge) x6
 
 Novexx:
 
