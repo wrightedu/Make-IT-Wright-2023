@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns4:Envelope xmlns:ns2="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns3="urn:epcglobal:epcis-query:xsd:1" xmlns:ns4="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns5="urn:epcglobal:epcis:xsd:1" xmlns:ns6="urn:epcglobal:epcis-masterdata:xsd:1">
+    <ns4:Body>
+        <ns3:QueryResults>
+            <queryName>SimpleEventQuery</queryName>
+            <resultsBody>
+                <EventList>
+                    <ObjectEvent>
+                        <eventTime>2016-12-01T08:09:23.582+11:00</eventTime>
+                        <recordTime>2023-01-06T23:01:04.480Z</recordTime>
+                        <eventTimeZoneOffset>+11:00</eventTimeZoneOffset>
+                        <epcList/>
+                        <action>ADD</action>
+                        <bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+                        <disposition>urn:epcglobal:cbv:disp:active</disposition>
+                        <readPoint>
+                            <id>geo:0.886256,148.445297</id>
+                        </readPoint>
+                        <bizLocation>
+                            <id>urn:epc:id:sgln:0047000.00004.0</id>
+                        </bizLocation>
+                        <extension>
+                            <quantityList>
+<quantityElement>
+    <epcClass>urn:epc:class:lgtin:0048000.363267.YFT123</epcClass>
+    <quantity>5714</quantity>
+    <uom>KGM</uom>
+</quantityElement>
+                            </quantityList>
+                            <ilmd>
+<cbvmda:vesselCatchInformationList xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <vesselCatchInformation>
+        <catchArea>FAO.71</catchArea>
+        <economicZone>XIN</economicZone>
+        <fishingGearTypeCode>PS</fishingGearTypeCode>  
+                            </vesselCatchInformation>
+                        </cbvmda:vesselCatchInformationList>
+<cbvmda:productionMethodCode xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MARINE_FISHERY</cbvmda:productionMethodCode>
+<cbvmda:harvestStartDate xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2016-11-10</cbvmda:harvestStartDate>
+<cbvmda:harvestEndDate xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2016-12-01</cbvmda:harvestEndDate>
+<cbvmda:certificationList xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <certification>
+        <certificationStandard>NM6</certificationStandard>
+        <certificationAgency>DFO</certificationAgency>
+        <certificationValue>SIMP.LPCO.2</certificationValue>
+        <certificationIdentification>10161781</certificationIdentification> 
+                            </certification>
+                        </cbvmda:certificationList>
+                            </ilmd>
+                        </extension>
+                        <gdst:productOwner xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">urn:epc:id:pgln:0047000.00001</gdst:productOwner>
+                        <cbvmda:informationProvider xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:gdst="https://traceability-dialogue.org/epcis" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">urn:epc:id:pgln:0048000.00001</cbvmda:informationProvider>
+                    </ObjectEvent>
+                    <ObjectEvent>
+                        <eventTime>2012-04-05T11:35:00.000Z</eventTime>
+                        <recordTime>2023-01-23T17:21:48.015Z</recordTime>
+                        <eventTimeZoneOffset>+01:00</eventTimeZoneOffset>
+                        <epcList/>
+                        <action>ADD</action>
+                        <bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+                        <disposition>urn:epcglobal:cbv:disp:active</disposition>
+                        <bizLocation>
+                            <id>urn:epc:id:sgln:409876.500001.0</id>
+                        </bizLocation>
+                        <extension>
+                            <quantityList>
+<quantityElement>
+    <epcClass>urn:epc:class:lgtin:409876.0000001.L1</epcClass>
+    <quantity>3500</quantity>
+</quantityElement>
+<quantityElement>
+    <epcClass>urn:epc:class:lgtin:409876.0000002.L4</epcClass>
+    <quantity>200</quantity>
+</quantityElement>
+                            </quantityList>
+                            <ilmd>
+<cbvmda:lotNumber xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:wg4="http://epcis.wg4.fr/ns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">00123</cbvmda:lotNumber>
+<cbvmda:itemExpirationDate xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:epcis="urn:epcglobal:epcis:xsd:1" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:wg4="http://epcis.wg4.fr/ns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2020-12-12</cbvmda:itemExpirationDate>
+                            </ilmd>
+                        </extension>
+                    </ObjectEvent>
+                </EventList>
+            </resultsBody>
+        </ns3:QueryResults>
+    </ns4:Body>
+</ns4:Envelope>

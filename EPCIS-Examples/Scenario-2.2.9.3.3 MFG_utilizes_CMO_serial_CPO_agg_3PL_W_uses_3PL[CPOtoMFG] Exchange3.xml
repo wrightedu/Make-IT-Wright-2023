@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Scenario Manufacturer utilizes a Contract Manufacturer, Contract Packager and 3PL, and Wholesaler utilizes a 3PL -->
+<!-- CPO to MFG Exchange3: Contract Packager (CPO) receives shipment from Contract Manufacturer (CMO) on April 3
+      CPO sends EPCIS Receiving events to MFG
+      20 LSUs are serialized and received by CPO  
+-->
+<epcis:EPCISDocument xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:gs1ushc="http://epcis.gs1us.org/hc/ns" xmlns:epcis="urn:epcglobal:epcis:xsd:1" schemaVersion="1.2" xsi:schemaLocation="urn:epcglobal:epcis:xsd:1 EPCglobal-epcis-1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creationDate="2021-04-03T20:45:16Z">
+	<EPCISHeader>
+		<sbdh:StandardBusinessDocumentHeader>
+			<sbdh:HeaderVersion>1.0</sbdh:HeaderVersion>
+			<sbdh:Sender>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:0534245.13572.0</sbdh:Identifier>
+			</sbdh:Sender>
+			<sbdh:Receiver>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:030001.111111.0</sbdh:Identifier>
+			</sbdh:Receiver>
+			<sbdh:DocumentIdentification>
+				<sbdh:Standard>EPCglobal</sbdh:Standard>
+				<sbdh:TypeVersion>1.0</sbdh:TypeVersion>
+				<sbdh:InstanceIdentifier>1100310003</sbdh:InstanceIdentifier>
+				<sbdh:Type>Events</sbdh:Type>
+				<sbdh:CreationDateAndTime>2021-04-03T20:45:16Z</sbdh:CreationDateAndTime>
+			</sbdh:DocumentIdentification>
+		</sbdh:StandardBusinessDocumentHeader>
+		<extension>
+			<EPCISMasterData>
+				<VocabularyList>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:EPCClass">
+						<VocabularyElementList>
+							<!-- master data for lowest saleable unit -->
+							<VocabularyElement id="urn:epc:idpat:sgtin:030001.0012345.*">
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentification">0001-0123-45</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentificationTypeCode">FDA_NDC_10</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#regulatedProductName">Epcistra</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#manufacturerOfTradeItemPartyName">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#dosageFormType">PILL</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#strengthDescription">100mg</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#netContentDescription">500 pills</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:Location">
+						<VocabularyElementList>
+							<!-- Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:030001.111111.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">1295 S George Ave</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Room 378</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Washington</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">DC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">12345-6789</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- CMO for Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:0455136.24681.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 CMO</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">214 Atlantic Ave</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Suite 500</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Louisville</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">KY</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">40129-3336</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- CPO for Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:0534245.13572.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 CPO</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">123 Barton Springs Rd</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Suite 2403</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Austin</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">TX</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">78704-0004</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+				</VocabularyList>
+			</EPCISMasterData>
+		</extension>
+	</EPCISHeader>
+	<EPCISBody>
+		<EventList>
+			<!-- E1: Receiving event (20 LSUs)-->
+			<ObjectEvent>
+				<eventTime>2021-04-03T18:41:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sgtin:030001.0012345.11</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.12</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.13</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.14</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.15</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.16</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.17</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.18</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.19</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.20</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.21</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.22</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.23</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.24</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.25</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.26</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.27</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.28</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.29</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.30</epc>
+				</epcList>
+				<action>OBSERVE</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:receiving</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:0534245.13572.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:0534245.13572.0</id>
+				</bizLocation>
+				<bizTransactionList>
+					<bizTransaction type="urn:epcglobal:cbv:btt:desadv">urn:epcglobal:cbv:bt:0455136246813:S9DEL123</bizTransaction>
+				</bizTransactionList>
+				<extension>
+					<!-- Source Owning Party is MFG, Source Location is CMO  -->
+					<sourceList>
+						<source type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:030001.111111.0</source>
+						<source type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:0455136.24681.0</source>
+					</sourceList>
+					<!-- Destination Owning Party is MFG, Destination Location is MFG CPO -->
+					<destinationList>
+						<destination type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:030001.111111.0</destination>
+						<destination type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:0534245.13572.0</destination>
+					</destinationList>
+				</extension>
+			</ObjectEvent>
+		</EventList>
+	</EPCISBody>
+</epcis:EPCISDocument>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Scenario 340B Dispensing Entity utilizes Contract Pharmacy  -->
+<!-- D to CRx Exchange1: Dispenser (D) sends Wholesaler-provided serialized data to Contract Pharmacy (CRx) on April 5
+      D sends wholesaler-provided EPCIS Commissioning, Packing and Shipping events to CRx as provided by Wholesaler (W) in DSCSA messages.
+      1 tote containing 1 LSU = 1 bottle of 100 count pill of GTIN A 
+-->
+<epcis:EPCISDocument xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:gs1ushc="http://epcis.gs1us.org/hc/ns" xmlns:epcis="urn:epcglobal:epcis:xsd:1" schemaVersion="1.2" xsi:schemaLocation="urn:epcglobal:epcis:xsd:1 EPCglobal-epcis-1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creationDate="2021-04-05T17:10:16Z">
+	<EPCISHeader>
+		<sbdh:StandardBusinessDocumentHeader>
+			<sbdh:HeaderVersion>1.0</sbdh:HeaderVersion>
+			<sbdh:Sender>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:084436921.567.0</sbdh:Identifier>
+			</sbdh:Sender>
+			<sbdh:Receiver>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:084436921.568.0</sbdh:Identifier>
+			</sbdh:Receiver>
+			<sbdh:DocumentIdentification>
+				<sbdh:Standard>EPCglobal</sbdh:Standard>
+				<sbdh:TypeVersion>1.0</sbdh:TypeVersion>
+				<sbdh:InstanceIdentifier>1100330001</sbdh:InstanceIdentifier>
+				<sbdh:Type>Events</sbdh:Type>
+				<sbdh:CreationDateAndTime>2021-04-05T17:10:16Z</sbdh:CreationDateAndTime>
+			</sbdh:DocumentIdentification>
+		</sbdh:StandardBusinessDocumentHeader>
+		<extension>
+			<EPCISMasterData>
+				<VocabularyList>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:EPCClass">
+						<VocabularyElementList>
+							<!-- master data for lowest saleable unit -->
+							<VocabularyElement id="urn:epc:idpat:sgtin:030001.0012345.*">
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentification">0001-0123-45</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentificationTypeCode">FDA_NDC_10</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#regulatedProductName">Epcistra</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#manufacturerOfTradeItemPartyName">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#dosageFormType">TABLET</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#strengthDescription">100mg</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#netContentDescription">100 pills</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:Location">
+						<VocabularyElementList>
+							<!-- Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:030001.111111.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">1295 S George Ave</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Room 378</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Washington</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">DC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">12345-6789</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- Wholesaler Corp -->
+							<VocabularyElement id="urn:epc:id:sgln:039999.999999.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 Drug Wholesaler Corp</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">230 Park Ave S</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Room 378</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">New York</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">NY</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">10003-1502</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- Wholesaler Location -->
+							<VocabularyElement id="urn:epc:id:sgln:039999.810234.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 Drug Wholesaler DC1</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">17342 Main St</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Suite 201</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Louisville</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">KY</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">40129-3336</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- Dispenser Pharmacy  -->
+							<VocabularyElement id="urn:epc:id:sgln:084436921.567.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 DISP PHRM</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">671 Grand Ave S</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Room 201</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Memphis</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">TN</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">38103</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- Contract Pharmacy -->
+							<VocabularyElement id="urn:epc:id:sgln:084436921.568.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 CONTRACT PHARMACY</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">142 Hill St</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Suite 100</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Memphis</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">TN</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">38108</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+				</VocabularyList>
+			</EPCISMasterData>
+		</extension>
+	</EPCISHeader>
+	<EPCISBody>
+		<EventList>
+			<!-- E1: Commissioning events (1 LSU) -->
+			<ObjectEvent>
+				<eventTime>2021-01-31T07:04:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sgtin:030001.0012345.11</epc>
+				</epcList>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:active</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+				<extension>
+					<ilmd>
+						<cbvmda:lotNumber>A123</cbvmda:lotNumber>
+						<cbvmda:itemExpirationDate>2024-01-31</cbvmda:itemExpirationDate>
+					</ilmd>
+				</extension>
+			</ObjectEvent>
+			<!-- E2: Commissioning events (1 tote SSCC 103999912345678901) -->
+			<ObjectEvent>
+				<eventTime>2021-04-05T14:10:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sscc:039999.11234567890</epc>
+				</epcList>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:active</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:039999.810234.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:039999.810234.0</id>
+				</bizLocation>
+			</ObjectEvent>
+			<!-- E3:Packing event (for tote SSCC 103999912345678901) -->
+			<AggregationEvent>
+				<eventTime>2021-04-05T14:15:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sscc:039999.11234567890</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.11</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:039999.810234.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:039999.810234.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E4: Shipping event (tote SSCC 103999912345678901 )-->
+			<ObjectEvent>
+				<eventTime>2021-04-05T16:15:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sscc:039999.11234567890</epc>
+				</epcList>
+				<action>OBSERVE</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:shipping</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_transit</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:039999.810234.0</id>
+				</readPoint>
+				<!-- 2 business documents: PO from buying dispenser, Delivery Document created by Wholesaler -->
+				<bizTransactionList>
+					<bizTransaction type="urn:epcglobal:cbv:btt:po">urn:epcglobal:cbv:bt:0844369215671:S11JKLPO789</bizTransaction>
+					<bizTransaction type="urn:epcglobal:cbv:btt:desadv">urn:epcglobal:cbv:bt:0399999999991:S11PHRMDEL20211234</bizTransaction>
+				</bizTransactionList>
+				<extension>
+					<!-- Source Owning Party is WHLS, Source Location is Wholesaler DC -->
+					<sourceList>
+						<source type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:039999.999999.0</source>
+						<source type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:039999.810234.0</source>
+					</sourceList>
+					<!-- Destination Owning Party is Dispenser Pharmacy, Destination Location is Contract Pharmacy -->
+					<destinationList>
+						<destination type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:084436921.567.0</destination>
+						<destination type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:084436921.568.0</destination>
+					</destinationList>
+				</extension>
+			</ObjectEvent>
+		</EventList>
+	</EPCISBody>
+</epcis:EPCISDocument>
