@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Example Harvesting RAC Events-->
+
+<epcis:EPCISDocument xmlns:cbvmda="urn:epcglobal:cbv:mda" xmlns:sbdh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:gs1ushc="http://epcis.gs1us.org/hc/ns" xmlns:epcis="urn:epcglobal:epcis:xsd:1" schemaVersion="1.2" xsi:schemaLocation="urn:epcglobal:epcis:xsd:1 EPCglobal-epcis-1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" creationDate="2021-04-01T08:45:16Z">
+	<EPCISHeader>
+		<sbdh:StandardBusinessDocumentHeader>
+			<sbdh:HeaderVersion>1.0</sbdh:HeaderVersion>
+			<sbdh:Sender>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:030001.111111.0</sbdh:Identifier>
+			</sbdh:Sender>
+			<sbdh:Receiver>
+				<sbdh:Identifier Authority="SGLN">urn:epc:id:sgln:08429315.1234.0</sbdh:Identifier>
+			</sbdh:Receiver>
+			<sbdh:DocumentIdentification>
+				<sbdh:Standard>EPCglobal</sbdh:Standard>
+				<sbdh:TypeVersion>1.0</sbdh:TypeVersion>
+				<sbdh:InstanceIdentifier>1100220001</sbdh:InstanceIdentifier>
+				<sbdh:Type>Events</sbdh:Type>
+				<sbdh:CreationDateAndTime>2021-04-01T08:45:16Z</sbdh:CreationDateAndTime>
+			</sbdh:DocumentIdentification>
+		</sbdh:StandardBusinessDocumentHeader>
+		<extension>
+			<EPCISMasterData>
+				<VocabularyList>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:EPCClass">
+						<VocabularyElementList>
+							<!-- master data for lowest saleable unit -->
+							<VocabularyElement id="urn:epc:idpat:sgtin:030001.0012345.*">
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentification">0001-0123-45</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentificationTypeCode">FDA_NDC_10</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#regulatedProductName">Epcistra</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#manufacturerOfTradeItemPartyName">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#dosageFormType">PILL</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#strengthDescription">100mg</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#netContentDescription">500 pills</attribute>
+							</VocabularyElement>
+							<!-- master data for case -->
+							<VocabularyElement id="urn:epc:idpat:sgtin:030001.1012345.*">
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentification">0001-0123-45</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#additionalTradeItemIdentificationTypeCode">FDA_NDC_10</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#regulatedProductName">Epcistra</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#manufacturerOfTradeItemPartyName">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#dosageFormType">PILL</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#strengthDescription">100mg</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#netContentDescription">500 pills</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+					<Vocabulary type="urn:epcglobal:epcis:vtype:Location">
+						<VocabularyElementList>
+							<!-- Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:030001.111111.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 Pharma LLC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">1295 S George Ave</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Room 378</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Washington</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">DC</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">12345-6789</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+							<!-- 3PL for Manufacturer -->
+							<VocabularyElement id="urn:epc:id:sgln:08429315.1234.0">
+								<attribute id="urn:epcglobal:cbv:mda#name">GS1 MFG_3PL</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressOne">998 Taylor Ave</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#streetAddressTwo">Suite 486</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#city">Louisville</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#state">KY</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#postalCode">40129-3336</attribute>
+								<attribute id="urn:epcglobal:cbv:mda#countryCode">US</attribute>
+							</VocabularyElement>
+						</VocabularyElementList>
+					</Vocabulary>
+				</VocabularyList>
+			</EPCISMasterData>
+		</extension>
+	</EPCISHeader>
+	<EPCISBody>
+		<EventList>
+			<!-- E1: Commissioning events (80 LSUs: 4 LSUs per case = 4x20 cases) -->
+			<ObjectEvent>
+				<eventTime>2021-04-01T07:04:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sgtin:030001.0012345.11</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.12</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.13</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.14</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.15</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.16</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.17</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.18</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.19</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.20</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.21</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.22</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.23</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.24</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.25</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.26</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.27</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.28</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.29</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.30</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.31</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.32</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.33</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.34</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.35</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.36</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.37</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.38</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.39</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.40</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.41</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.42</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.43</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.44</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.45</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.46</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.47</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.48</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.49</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.50</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.51</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.52</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.53</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.54</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.55</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.56</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.57</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.58</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.59</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.60</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.61</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.62</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.63</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.64</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.65</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.66</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.67</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.68</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.69</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.70</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.71</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.72</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.73</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.74</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.75</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.76</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.77</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.78</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.79</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.80</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.81</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.82</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.83</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.84</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.85</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.86</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.87</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.88</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.89</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.90</epc>
+				</epcList>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:active</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+				<extension>
+					<ilmd>
+						<cbvmda:lotNumber>A123</cbvmda:lotNumber>
+						<cbvmda:itemExpirationDate>2024-01-31</cbvmda:itemExpirationDate>
+					</ilmd>
+				</extension>
+			</ObjectEvent>
+			<!-- E2: Commissioning events (20 case SNs 110, 111, 121, 131, 141, 151, 161, 171, 181, 191,
+                                                                              210, 211, 221, 231, 241, 251, 261, 271, 281, 291) -->
+			<ObjectEvent>
+				<eventTime>2021-04-01T07:10:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sgtin:030001.1012345.110</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.111</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.121</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.131</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.141</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.151</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.161</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.171</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.181</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.191</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.210</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.211</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.221</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.231</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.241</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.251</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.261</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.271</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.281</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.291</epc>
+				</epcList>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:active</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+				<extension>
+					<ilmd>
+						<cbvmda:lotNumber>A123</cbvmda:lotNumber>
+						<cbvmda:itemExpirationDate>2024-01-31</cbvmda:itemExpirationDate>
+					</ilmd>
+				</extension>
+			</ObjectEvent>
+			<!-- E3: Commissioning events (2 pallets of GTIN A) -->
+			<ObjectEvent>
+				<eventTime>2021-04-01T07:15:16Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sscc:030001.41234567890</epc>
+					<epc>urn:epc:id:sscc:030001.41234567895</epc>
+				</epcList>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:commissioning</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:active</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</ObjectEvent>
+			<!-- E4: Packing event (for case SN 110) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:20:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.110</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.11</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.12</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.13</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.14</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E5: Packing event (for case SN 111) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:21:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.111</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.15</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.16</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.17</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.18</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E6: Packing event (for case SN 121) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:22:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.121</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.19</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.20</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.21</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.22</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E7: Packing event (for case SN 131) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:23:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.131</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.23</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.24</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.25</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.26</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E8: Packing event (for case SN 141) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:24:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.141</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.27</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.28</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.29</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.30</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E9: Packing event (for case SN 151) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:25:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.151</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.31</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.32</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.33</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.34</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E10: Packing event (for case SN 161) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:26:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.161</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.35</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.36</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.37</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.38</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E11: Packing event (for case SN 171) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:27:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.171</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.39</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.40</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.41</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.42</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E12: Packing event (for case SN 181) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:28:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.181</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.43</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.44</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.45</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.46</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E13: Packing event (for case SN 191) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:29:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.191</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.47</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.48</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.49</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.50</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E14: Packing event (for case SN 210) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:30:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.210</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.51</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.52</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.53</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.54</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E15: Packing event (for case SN 211) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:31:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.211</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.55</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.56</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.57</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.58</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E16: Packing event (for case SN 221) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:32:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.221</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.59</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.60</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.61</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.62</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E17: Packing event (for case SN 231) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:33:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.231</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.63</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.64</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.65</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.66</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E18: Packing event (for case SN 241) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:34:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.241</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.67</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.68</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.69</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.70</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E19: Packing event (for case SN 251) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:35:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.251</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.71</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.72</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.73</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.74</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E20: Packing event (for case SN 261) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:36:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.261</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.75</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.76</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.77</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.78</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E21: Packing event (for case SN 271) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:37:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.271</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.79</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.80</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.81</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.82</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E22: Packing event (for case SN 281) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:38:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.281</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.83</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.84</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.85</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.86</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E23: Packing event (for case SN 291) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:39:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sgtin:030001.1012345.291</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.0012345.87</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.88</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.89</epc>
+					<epc>urn:epc:id:sgtin:030001.0012345.90</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E24:Packing event (for pallet1 SSCC 403000112345678901) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:40:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sscc:030001.41234567890</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.1012345.110</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.111</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.121</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.131</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.141</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.151</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.161</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.171</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.181</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.191</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E25:Packing event (for pallet2 SSCC 403000112345678956) -->
+			<AggregationEvent>
+				<eventTime>2021-04-01T07:41:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<parentID>urn:epc:id:sscc:030001.41234567895</parentID>
+				<childEPCs>
+					<epc>urn:epc:id:sgtin:030001.1012345.210</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.211</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.221</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.231</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.241</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.251</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.261</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.271</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.281</epc>
+					<epc>urn:epc:id:sgtin:030001.1012345.291</epc>
+				</childEPCs>
+				<action>ADD</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:packing</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_progress</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizLocation>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</bizLocation>
+			</AggregationEvent>
+			<!-- E26: Shipping event (pallet1 SSCC 403000112345678901 and pallet2 SSCC 403000112345678956)-->
+			<ObjectEvent>
+				<eventTime>2021-04-01T08:41:18Z</eventTime>
+				<eventTimeZoneOffset>-05:00</eventTimeZoneOffset>
+				<epcList>
+					<epc>urn:epc:id:sscc:030001.41234567890</epc>
+					<epc>urn:epc:id:sscc:030001.41234567895</epc>
+				</epcList>
+				<action>OBSERVE</action>
+				<bizStep>urn:epcglobal:cbv:bizstep:shipping</bizStep>
+				<disposition>urn:epcglobal:cbv:disp:in_transit</disposition>
+				<readPoint>
+					<id>urn:epc:id:sgln:030001.111111.0</id>
+				</readPoint>
+				<bizTransactionList>
+					<bizTransaction type="urn:epcglobal:cbv:btt:desadv">urn:epcglobal:cbv:bt:0300011111116:DEL123</bizTransaction>
+				</bizTransactionList>
+				<extension>
+					<!-- Source Owning Party is MFG, Source Location is MFG  -->
+					<sourceList>
+						<source type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:030001.111111.0</source>
+						<source type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:030001.111111.0</source>
+					</sourceList>
+					<!-- Destination Owning Party is MFG, Destination Location is 3PL  -->
+					<destinationList>
+						<destination type="urn:epcglobal:cbv:sdt:owning_party">urn:epc:id:sgln:030001.111111.0</destination>
+						<destination type="urn:epcglobal:cbv:sdt:location">urn:epc:id:sgln:08429315.1234.0</destination>
+					</destinationList>
+				</extension>
+			</ObjectEvent>
+		</EventList>
+	</EPCISBody>
+</epcis:EPCISDocument>
