@@ -4,7 +4,7 @@ Congratulations everyone! The 2023 Make IT Wright Hackathon began on Saturday Fe
 
 I could not be more proud and thankful to all of our students for their exceptional performance in this event.  I would also like to thank our sponsors, all of which donated their time, expertise, equipment, and money so that our students would have this experience! Without further ado, the winners!
 
-### First Prize - $3,000 prize: Team 10
+### First Prize - $3,000 prize: Team 10 - CSE PharmaSol
 
 * Ean Hatfield
 * Braden Pennie
@@ -13,7 +13,7 @@ I could not be more proud and thankful to all of our students for their exceptio
 
 Their submission: https://github.com/ReeseHatfield/MakeItWrightHackathon2023
 
-### Second Place - $2,000 prize: Team 13
+### Second Place - $2,000 prize: Team 13 - SaladMan
 
 * Joseph Sodergren
 * Derrick Thompson
@@ -22,7 +22,7 @@ Their submission: https://github.com/ReeseHatfield/MakeItWrightHackathon2023
 
 Their submission: https://github.com/Obscure2020/SaladMan
 
-### Third Place - $1,000 prize: Team 18
+### Third Place - $1,000 prize: Team 18 - Automatic Event Creation System (AECS)
 
 * Mason McDaniel
 * Nicole Pililyan
