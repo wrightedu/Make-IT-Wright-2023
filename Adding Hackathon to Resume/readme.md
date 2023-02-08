@@ -9,4 +9,4 @@ How do I put a hackathon on my resume?
 
 Adding a hackathon to your resume is as simple as including an additional section for projects, and listing bullet points that explain your project in the same format as you list work experience or internship experience.** 
 
-[How to doc adding hackathon to a resume](https://www.google.com)
+[How to doc adding hackathon to a resume](https://github.com/wrightedu/Make-IT-Wright-2023/blob/main/Adding%20Hackathon%20to%20Resume/Including%20Hackathon%20on%20resume.docx)
